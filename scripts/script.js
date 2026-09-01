@@ -53,7 +53,7 @@ submitBtn.onclick = () => {
   let isConfirmPasswordOk = false;
 
   // validate first name
-  if (firstNameInput.value === "") {
+  if (firstNameInput.value.trim() === "") {
     firstNameInput.classList.add("is-invalid");
     isFirstNameOk = false;
   } else {
@@ -62,7 +62,7 @@ submitBtn.onclick = () => {
   }
 
   // validate last name
-  if (lastNameInput.value === "") {
+  if (lastNameInput.value.trim() === "") {
     lastNameInput.classList.add("is-invalid");
     isLastnameOk = false;
   } else {
@@ -97,7 +97,9 @@ submitBtn.onclick = () => {
     isConfirmPasswordOk = true;
   }
 
-  if (isFirstNameOk && isLastnameOk && isEmailOk && isPasswordOk && isConfirmPasswordOk) alert("Registered successfully");
+  if (isFirstNameOk && isLastnameOk && isEmailOk && isPasswordOk && isConfirmPasswordOk) {
+    alert("Registered successfully");
+  }
 };
 
 // add callback function for Reset button.
@@ -107,9 +109,9 @@ resetBtn.onclick = () => {
   emailInput.value = "";
   passwordInput.value = "";
   confirmPasswordInput.value = "";
-  isFirstNameOk = false;
-  isLastnameOk = false;
-  isEmailOk = false;
-  isPasswordOk = false;
-  isConfirmPasswordOk = false;
-}
+
+  const inputs = [firstNameInput, lastNameInput, emailInput, passwordInput, confirmPasswordInput];
+  inputs.forEach((input) => {
+    input.classList.remove("is-valid", "is-invalid");
+  });
+};
