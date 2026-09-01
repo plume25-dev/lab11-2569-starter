@@ -2,11 +2,11 @@
 
 ### ป้อนข้อมูลนักศึกษา
 
-รหัส นศ.:
+รหัส นศ.:680610713
 
-ชื่อ-สกุล :
+ชื่อ-สกุล :วรัชญ์ วงศ์วิชิค
 
-GitHub Page URL :
+GitHub Page URL :https://github.com/plume25-dev/lab11-2569-starter.git
 
 ---
 
